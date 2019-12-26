@@ -11,10 +11,26 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Build, Configuration $(buildConfiguration)'
 
-- task: ArchiveFiles@2
+- task: DotNetCoreCLI@2
+  displayName: 'Publish'
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    command: 'publish'
+    publishWebProjects: false
+    arguments: '--configuration Release --output publish_output'
+    zipAfterPublish: false
+    modifyOutputPath: true
+
+- task: ArchiveFiles@2
+  displayName: 'Zip build'
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/publish_output'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
