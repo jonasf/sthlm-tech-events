@@ -9,7 +9,7 @@ namespace SthlmTechEvents.App
     public static class FetchEvents
     {
         [FunctionName("FetchEvents")]
-        public static async Task RunAsync([TimerTrigger("0 */5 * ? * *")] TimerInfo myTimer, ILogger log)
+        public static async Task RunAsync([TimerTrigger("0 1 * ? * *")] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"Fetch events function executed at: {DateTime.UtcNow}");
         }
