@@ -8,6 +8,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SthlmTechEvents.BusinessLog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SthlmTechEvents.Data", "src\SthlmTechEvents.Data\SthlmTechEvents.Data.csproj", "{D06C49DB-4979-4176-BF5E-E0796316B79E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FB84D020-8932-403D-B799-CCE5D0380309}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F9092FB2-E02F-4577-B5C8-FBB7C2F037D9}"
+ProjectSection(SolutionItems) = preProject
+	azure-pipelines.yml = azure-pipelines.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +37,8 @@ Global
 		{D06C49DB-4979-4176-BF5E-E0796316B79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D06C49DB-4979-4176-BF5E-E0796316B79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06C49DB-4979-4176-BF5E-E0796316B79E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B82ADAAD-A82A-456B-A7A8-F96CDF074386} = {FB84D020-8932-403D-B799-CCE5D0380309}
 	EndGlobalSection
 EndGlobal
