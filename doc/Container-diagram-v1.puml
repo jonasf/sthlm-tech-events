@@ -1,0 +1,19 @@
+@startuml Container diagram for Stockholm Tech events
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+System_Boundary(azure, "Stockholm Tech events system") {
+  Container(GetEvents, "Azure function", "C#", "Fetches events from different services and publishes them via the Twitter API.")
+}
+
+System_Ext(twitter, "Twitter")
+System_Ext(Meetupcom, "Meetup.com")
+System_Ext(eventbrite, "Eventbrite")
+
+Person_Ext(anonymous_user, "Anonymous User")
+
+Rel(anonymous_user, twitter, "Reads tweets", "HTTPS")
+Rel(GetEvents, twitter, "Posts tweets", "HTTPS")
+Rel(GetEvents, Meetupcom, "Gets events", "HTTPS")
+Rel(GetEvents, eventbrite, "Gets events", "HTTPS")
+
+@enduml
