@@ -1,5 +1,5 @@
 # Stockholm Tech Events
-# PROJECT PAUSED: Using the API:s of Meetup or Eventbrite is currently not feasible due to cost of using API:s or missing functionality for the use case int the API:s
+# PROJECT PAUSED: Using the API:s of Meetup or Eventbrite is currently not feasible due to costs of using API:s or missing functionality for the use case in the API:s
 
 A simple application to get meetup events filtered on a specific city from sources like Meetup.com and Eventbrite and publish those events to a Twitter feed and in a later version also save to a database and show on a web page.
 
